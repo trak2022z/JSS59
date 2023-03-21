@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  
+<body>
+    <button id="btn1">Click here</button>
+    <h1 id="text1"></h1>
+    <h1 id="text2"></h1>
+  
+    <script>
+        let btn_element1 = document.getElementById("btn1");
+  
+        btn_element1.addEventListener("click", () => {
+            document.getElementById("text1")
+                .innerHTML = "Task 1 is performed";
+        })
+  
+        btn_element1.addEventListener("click", () => {
+            document.getElementById("text2")
+                .innerHTML = "Task 2 is performed";
+        });
+    </script>
+
+
+  <div>Multiple events cannot be associated with an element as there is overwriting</div>
+  <button id="btn2">Click here</button>
+    <h1 id="text3"></h1>
+    <h1 id="text4"></h1>
+  
+    <script>
+        let btn_element2 = document.getElementById("btn2");
+  
+        btn_element2.onclick = () => {
+            document.getElementById("text3")
+                .innerHTML = "Task 3 is performed";
+        };
+  
+        btn_element2.onclick = () => {
+            document.getElementById("text4")
+                .innerHTML = "Task 4 is performed";
+        };
+    </script>
+</body>
+  
+</html>
